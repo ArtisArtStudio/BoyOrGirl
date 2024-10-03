@@ -31,7 +31,7 @@
     var triggered=false;
     var nosound=true;
     var params = new URLSearchParams(window.location.search.slice(1));
-    var pct1=0, pct2=0, pct3=0, pct4=0, pct5=0, pct6 = 0;
+    var pct1=0, pct2=0, pct3=0, pct4=0, pct5=0, pct6 = 0; 
 
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
@@ -222,7 +222,9 @@
             surname="the";
         }
 
-        document.getElementById('intro').innerHTML= "This is a gender reveal scratch off for <strong>" + surname + "</strong> family. It contains sound when the gender is revealed. Do you want to continue with sound?";
+        //document.getElementById('intro').innerHTML= "This is a gender reveal scratch off for <strong>" + surname + "</strong> family. It contains sound when the gender is revealed. Do you want to continue with sound?";
+        document.getElementById('surname').innerHTML= surname + " family";
+
         document.getElementById('id01').style.display='block';
         $('.nosoundbtn').on("click", function (e) {
             document.getElementById('id01').style.display='none';
@@ -243,7 +245,6 @@
         document.addEventListener(
             "visibilitychange",
              function(evt) {
-                console.log("page hidden")
               if (document.visibilityState != "visible") {
                 soundHandle.pause();
                 soundHandle.currentTime=0;              }
